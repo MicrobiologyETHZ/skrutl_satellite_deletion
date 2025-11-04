@@ -1,1 +1,41 @@
-# skrutl_satellite_deletion
+# Code accompanying Skrutl et al. 
+
+## Installation
+
+Clone this repository:
+
+```bash
+git clone https://github.com/MicrobiologyETHZ/skrutl_satellite_deletion.git
+cd skrutl_satellite_deletion
+```
+
+## DE Analysis
+
+To reproduce the differential expression analysis:
+
+1. Pull the Bioconductor Docker image:
+   ```bash
+   docker pull bioconductor/bioconductor_docker:latest
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -v ./skrutl_satellite_deletion:/home/rstudio -e PASSWORD=yourpassword -p 8787:8787 bioconductor/bioconductor_docker:latest
+   ```
+
+3. Install required R packages (in a new terminal):
+   ```bash
+   docker exec bioconductor/bioconductor_docker:latest Rscript /home/rstudio/DE_analysis/install_packages.R
+   ```
+
+4. Run the DE analysis script:
+   ```bash
+   docker exec bioconductor/bioconductor_docker:latest Rscript /home/rstudio/DE_analysis/22-02-23-deleteion-deseq.R
+   ```
+
+Alternatively, you can access RStudio Server at `http://localhost:8787` (username: `rstudio`, password: `yourpassword`) and run the scripts interactively.
+
+  
+## Phylogenetics
+
+

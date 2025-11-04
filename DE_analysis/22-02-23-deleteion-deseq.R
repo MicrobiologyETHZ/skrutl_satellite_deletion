@@ -2,18 +2,18 @@ library(DESeq2)
 library(tximport)
 library(edgeR)
 library(tidyverse)
-source("code/deseq_fx.R")
+#setwd("DE_analysis")
+source("deseq_fx.R")
 
 
-sampleData_file <- "data/deletion/22-02-23-deletion-sample-data.csv"
+sampleData_file <- "data/22-02-23-deletion-sample-data.csv"
 conditions <- "Genotype"
-#tx2gene_file <- "data/salmon/03_22/22-08-22-Drosophila_melanogaster.BDGP6.32.104.tx2gene.csv"
-outDir <- "data/deletion/results"
+outDir <- "results"
 prefix <- "22-02-23-deletion-featCnts-"
 lfct <- 0.5
 alpha <- 0.01
-annotations <- "data/22-08-22-org.Dm.eg.db-annotation.csv"
-count_file <- "data/deletion/BDGP6_deletion.merged.featureCounts.csv"
+annotations <- "data/22-08-22-org.Dm.eg.db-annotation.csv.gz"
+count_file <- "data/BDGP6_deletion.merged.featureCounts.csv.gz"
 
 deseq_output <- run_deseq_on_featCnts(sampleData_file, count_file, conditions,
                                       outDir, prefix)

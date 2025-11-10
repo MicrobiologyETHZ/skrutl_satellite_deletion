@@ -38,4 +38,13 @@ Alternatively, you can access RStudio Server at `http://localhost:8787` (usernam
   
 ## Phylogenetics
 
+The phylogenetic analysis constructs a maximum likelihood tree and performs population structure analysis using SNP and deletion datasets from the Drosophila GDL.
 
+**Key analyses:**
+- SNP filtering, LD pruning, and phylogenetic tree construction using IQ-TREE
+- Principal component analysis (PCA) for both SNP and deletion datasets
+- Population structure visualization
+
+**Software requirements:** vcftools, bcftools, plink2, iqtree2, Python 3 (Biopython, pandas, plotly)
+
+For detailed step-by-step instructions, see [phylogenetics/README.md](phylogenetics/README.md).

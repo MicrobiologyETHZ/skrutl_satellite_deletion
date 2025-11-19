@@ -20,7 +20,7 @@ To reproduce the differential expression analysis:
 
 2. Run the Docker container:
    ```bash
-   docker run -v ./skrutl_satellite_deletion:/home/rstudio -e PASSWORD=yourpassword -p 8787:8787 bioconductor/bioconductor_docker:latest
+   docker run -d -v ./skrutl_satellite_deletion:/home/rstudio -e PASSWORD=yourpassword -p 8787:8787 bioconductor/bioconductor_docker:latest
    ```
 
 3. Install required R packages (in a new terminal):
